@@ -1,5 +1,6 @@
 package papered.startupweekend.Activity
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView
@@ -10,6 +11,7 @@ import android.widget.Toast
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.*
 import kotlinx.android.synthetic.main.activity_choose_parcel.*
+import kotlinx.android.synthetic.main.item_parcel.view.*
 import papered.startupweekend.Model.ParcelModel
 import papered.startupweekend.R
 import papered.startupweekend.RecyclerAdapter.ParcelAdapter
@@ -37,15 +39,23 @@ class ChooseParcelActivity : AppCompatActivity() {
                         for (document: QueryDocumentSnapshot in it.result) {
                             Toast.makeText(baseContext,"for",Toast.LENGTH_SHORT).show()
                             val data = document.data
+
 //                            list.add(ParcelModel(approval = data["approval"].toString(), startingPoint = data["starting_point"].toString(), arrivalDetailAddress = data["arrival_detail_address"].toString(),
 //                                    arrivalPoint = data["arrival_point"].toString(), itemStatus = data["item_status"].toString().toBoolean(), itemWeight = data["item_weight"].toString(), largeItemCount = data["large_item_count"].toString(),
 //                                    middleItemCount = data["middle_item_count"].toString(), smallItemCount = data["small_item_count"].toString()))
                             list.add(ParcelListModel(startPoint = data["starting_point"].toString(), itemSize = "S: ${data["small_item_count"]}, M: ${data["middle_item_count"]}, L: ${data["large_item_count"]}",
-                                    itemWeight = data["item_weight"].toString(), arrivalPoint = data["arrival_point"].toString()))
+                                    itemWeight = data["item_weight"].toString(), arrivalPoint = data["arrival_point"].toString(),id = document.id))
                             Log.d("PARSE_RES", document.data.toString())
                         }
                         adapter = ParcelAdapter(list)
                         choose_recyclerView_parcelList.adapter = adapter
+                        adapter?.setItemClick(object : ParcelAdapter.ItemClick {
+                            override fun onClick(view: View, position: Int) {
+                                Toast.makeText(baseContext, list[position].id,Toast.LENGTH_SHORT).show()
+//                                val intent = Intent(this, )
+                            }
+
+                        })
                     }
                 }
                 .addOnFailureListener {
@@ -53,7 +63,6 @@ class ChooseParcelActivity : AppCompatActivity() {
                 }
         Toast.makeText(baseContext,"${list.size}",Toast.LENGTH_SHORT).show()
         choose_recyclerView_parcelList.setHasFixedSize(true)
-
         adapter?.notifyDataSetChanged()
     }
 }

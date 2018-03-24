@@ -38,7 +38,8 @@
         <activity android:name=".Activity.ShowPriceActivity" />
         <activity android:name=".Activity.WarningActivity" />
         <activity android:name=".Activity.ReceiveActivity" />
-        <activity android:name=".Activity.ChooseParcelActivity"></activity>
+        <activity android:name=".Activity.ChooseParcelActivity" />
+        <activity android:name=".Activity.ParcelInfoActivity"></activity>
     </application>
 
 </manifest>
