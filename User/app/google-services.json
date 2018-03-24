@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "268269937033",
+    "firebase_url": "https://pass-to-pass.firebaseio.com",
+    "project_id": "pass-to-pass",
+    "storage_bucket": "pass-to-pass.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268269937033:android:911539d621914918",
+        "android_client_info": {
+          "package_name": "papered.startupweekend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268269937033-s1hp8p774bomd043jr5nhlmi4mdjn20i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "papered.startupweekend",
+            "certificate_hash": "e0717574c4744caaef6e6eba2c3d94fb2a28ff02"
+          }
+        },
+        {
+          "client_id": "268269937033-j1jmfeesil1o8qurfovemr0ohqs16enb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk7w0pm3sGPqnodUhrKX-z1HwN7z4s8-Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268269937033-j1jmfeesil1o8qurfovemr0ohqs16enb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

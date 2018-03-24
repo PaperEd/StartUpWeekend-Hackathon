@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="papered.startupweekend.MainActivity">
+    tools:context="papered.startupweekend.Activity.LoginActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,5 +14,11 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/main_button_fb_login"
+        android:text="페북로그인"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </android.support.constraint.ConstraintLayout>
