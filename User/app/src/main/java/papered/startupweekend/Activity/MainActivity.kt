@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.view.View
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
 import papered.startupweekend.Fragment.LocationFragment
 import papered.startupweekend.Fragment.MainFragment
