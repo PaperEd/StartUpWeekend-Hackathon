@@ -23,6 +23,10 @@ android {
     }
 }
 
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
@@ -40,6 +44,7 @@ dependencies {
 
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'com.google.firebase:firebase-database:12.0.0'
+    compile 'com.github.PhilJay:MPAndroidChart:v2.1.6'
     compile 'com.squareup.okhttp3:okhttp:3.10.0'
     compile 'com.squareup.retrofit2:converter-gson:2.4.0'
     compile 'com.github.clans:fab:1.6.4'

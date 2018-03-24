@@ -3,11 +3,16 @@ package papered.startupweekend.Activity
 import android.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.FragmentStatePagerAdapter
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import papered.startupweekend.Fragment.LocationFragment
 import papered.startupweekend.Fragment.MainFragment
+import papered.startupweekend.Fragment.OptionFragment
 import papered.startupweekend.R
+import papered.startupweekend.R.id.main_bottomNavigationView
+import papered.startupweekend.R.id.main_viewPager
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,11 +33,11 @@ class MainActivity : AppCompatActivity() {
                     main_viewPager.currentItem = 0
                     return@setOnNavigationItemSelectedListener true
                 }
-                R.id.action_option ->{
+                R.id.action_location -> {
                     main_viewPager.currentItem = 1
                     return@setOnNavigationItemSelectedListener true
                 }
-                R.id.action_location ->{
+                R.id.action_option -> {
                     main_viewPager.currentItem = 2
                     return@setOnNavigationItemSelectedListener true
                 }
@@ -43,12 +48,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-private class PagerAdapter(fm : android.support.v4.app.FragmentManager) : FragmentStatePagerAdapter(fm) {
+
+private class PagerAdapter(fm: android.support.v4.app.FragmentManager) : FragmentStatePagerAdapter(fm) {
     override fun getItem(position: Int): android.support.v4.app.Fragment? {
-        return when(position){
-            0 -> MainFragment()
+        return when (position) {
+            0 -> {
+                MainFragment()
+            }
             1 -> LocationFragment()
-            2 -> MainFragment()
+            2 -> OptionFragment()
             else -> null
         }
     }

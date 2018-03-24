@@ -33,7 +33,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.ProfileInputActivity" />
-        <activity android:name=".Activity.MainActivity"></activity>
+        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.SendingParcelActivity" />
+        <activity android:name=".Activity.ShowPriceActivity"></activity>
     </application>
 
 </manifest>
