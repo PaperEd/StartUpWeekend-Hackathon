@@ -28,9 +28,9 @@
         app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
 
     <Spinner
-        android:id="@+id/sending_spinner_country"
+        android:id="@+id/sending_spinner_start"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:entries="@array/country"
@@ -175,10 +175,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sending_text_kg" />
 
-    <EditText
-        android:id="@+id/editText6"
+    <Spinner
+        android:id="@+id/sending_spinner_arrival"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
+        android:layout_height="45dp"
+        android:entries="@array/country"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
