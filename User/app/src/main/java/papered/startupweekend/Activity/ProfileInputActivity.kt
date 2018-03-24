@@ -13,6 +13,8 @@ class ProfileInputActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile_input)
         profile_submit.setOnClickListener {
             startActivity(Intent(this,MainActivity::class.java))
+            finish()
         }
+
     }
 }

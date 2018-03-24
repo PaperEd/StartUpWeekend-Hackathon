@@ -35,7 +35,8 @@
         <activity android:name=".Activity.ProfileInputActivity" />
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.SendingParcelActivity" />
-        <activity android:name=".Activity.ShowPriceActivity"></activity>
+        <activity android:name=".Activity.ShowPriceActivity" />
+        <activity android:name=".Activity.WarningActivity"></activity>
     </application>
 
 </manifest>
