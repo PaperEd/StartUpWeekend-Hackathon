@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/profile_editText_name"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/profile_editText_email"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -54,7 +54,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/profile_editText_phoneNumber"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -67,8 +67,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="전송"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText3"
-        app:layout_constraintStart_toEndOf="@+id/editText3" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/profile_editText_phoneNumber"
+        app:layout_constraintStart_toEndOf="@+id/profile_editText_phoneNumber" />
 
     <TextView
         android:id="@+id/textView4"
