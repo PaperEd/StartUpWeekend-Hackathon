@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import papered.startupweekend.Model.ParcelModel
 import papered.startupweekend.R
 
 class SplashActivity : AppCompatActivity() {

@@ -6,7 +6,7 @@ package papered.startupweekend.Model
 data class ParcelModel(var approval : String,
                        var arrivalDetailAddress: String,
                        var arrivalPoint : String,
-                       var itemStatus : String,
+                       var itemStatus : Boolean,
                        var itemWeight:String,
                        var largeItemCount : String,
                        var middleItemCount : String,

@@ -1,5 +1,6 @@
 package papered.startupweekend.Activity
 
+import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -18,6 +19,8 @@ class SendingParcelActivity : AppCompatActivity() {
         var startingPoint: String = "서울"
         var arrivalPoint = "서울"
         val dataBase = FirebaseFirestore.getInstance()
+        val sp = getSharedPreferences("userKey", Activity.MODE_PRIVATE)
+        val key: String? = sp.getString("key", "not_key")
         val parcel = HashMap<String, Any>()
         sending_spinner_start.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -72,13 +75,14 @@ class SendingParcelActivity : AppCompatActivity() {
             parcel.put("arrival_detail_address", sending_editText_detailAdress.text.toString())
             parcel.put("approval", false)
             parcel.put("item_status", "not accepted")
+            parcel.put("user_id", key.toString())
             dataBase.collection("parcel")
                     .add(parcel)
                     .addOnSuccessListener {
                         Toast.makeText(baseContext, "화물이 등록되었습니다!", Toast.LENGTH_SHORT).show()
                     }
-            startActivity(Intent(this, ShowPriceActivity::class.java))
-            finish()
+//            startActivity(Intent(this, ShowPriceActivity::class.java))
+//            finish()
         }
     }
 }

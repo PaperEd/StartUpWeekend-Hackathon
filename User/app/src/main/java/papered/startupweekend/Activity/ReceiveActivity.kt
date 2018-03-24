@@ -1,6 +1,7 @@
 package papered.startupweekend.Activity
 
 import android.app.Activity
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -76,16 +77,21 @@ class ReceiveActivity : AppCompatActivity() {
                     arrivalCountry = it.country
                 }
             }
+            val intent = Intent(this,ChooseParcelActivity::class.java)
             receiverInformation.put("start_point", startPoint)
             receiverInformation.put("arrival_point", arrivalPoint)
             receiverInformation.put("start_country", startCountry)
+            intent.putExtra("start_country",startCountry)
             receiverInformation.put("arrival_country", arrivalCountry)
+            intent.putExtra("arrival_country",arrivalCountry)
             receiverInformation.put("user_id", key.toString())
 
             dataBase.collection("receiver")
                     .add(receiverInformation)
                     .addOnSuccessListener {
                         Toast.makeText(baseContext, "되네", Toast.LENGTH_SHORT).show()
+                        startActivity(intent)
+                        finish()
                     }
                     .addOnFailureListener {
                         Toast.makeText(baseContext, "안되네", Toast.LENGTH_SHORT).show()
