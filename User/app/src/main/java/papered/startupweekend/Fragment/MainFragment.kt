@@ -36,11 +36,11 @@ class MainFragment() : Fragment() {
         val docRef : CollectionReference = dataBase.collection("airport")
         var startPoint : String
         var arrivalPoint : String
-        val list = ArrayList<String>()
+        val airportList = ArrayList<String>()
         docRef.get().addOnCompleteListener {
             if (it.isSuccessful){
                 val res = it.result
-                res.mapTo(list) { it.data["name"].toString() }
+                res.mapTo(airportList) { it.data["name"].toString() }
             }
         }
 
@@ -49,7 +49,7 @@ class MainFragment() : Fragment() {
         }
         view.mainFragment_receivePost.setOnClickListener {
             val intent = Intent(context,ReceiveActivity::class.java)
-            intent.putStringArrayListExtra("list",list)
+            intent.putStringArrayListExtra("airportList",airportList)
             startActivity(intent)
         }
         return view
