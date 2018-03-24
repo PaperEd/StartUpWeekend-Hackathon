@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_main.view.*
+import papered.startupweekend.Activity.SendingParcelActivity
 import papered.startupweekend.Activity.ShowPriceActivity
 
 import papered.startupweekend.R
@@ -28,7 +29,7 @@ class MainFragment() : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_main, container, false)
         view.mainFragment_sendingPost.setOnClickListener {
-            startActivity(Intent(context,ShowPriceActivity::class.java))
+            startActivity(Intent(context,SendingParcelActivity::class.java))
         }
         return view
     }
