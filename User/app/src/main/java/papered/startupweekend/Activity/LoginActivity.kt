@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
 //        val firebaseAuth = FirebaseAuth.getInstance()
         FacebookSdk.sdkInitialize(this.applicationContext)
         LoginPresenter(this).apply {
-            main_button_fb_login.setOnClickListener {
+            login_button_fb_login.setOnClickListener {
                 facebookLogIn(firebaseAuth)
 //                startActivity()
             }

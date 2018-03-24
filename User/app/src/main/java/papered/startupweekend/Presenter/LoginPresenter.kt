@@ -55,7 +55,7 @@ class LoginPresenter(val activity: AppCompatActivity) {
 
         LoginManager.getInstance().logInWithPublishPermissions(activity, listOf())
 
-        activity.startActivity(Intent(activity.baseContext, LoginActivity::class.java))
+        activity.startActivity(Intent(activity.baseContext, ProfileInputActivity::class.java))
     }
 
 }
