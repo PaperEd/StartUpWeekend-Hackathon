@@ -13,21 +13,23 @@ import com.facebook.login.LoginResult
  */
 class LoginPresenter(val activity: AppCompatActivity) {
 
-    fun facebookLogIn(){
-        val callbackManager : CallbackManager = CallbackManager.Factory.create()
+    fun facebookLogIn() {
+        val callbackManager: CallbackManager = CallbackManager.Factory.create()
 
         LoginManager.getInstance().registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(result: LoginResult?) {
-                Toast.makeText(activity.baseContext, "됐네",Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity.baseContext, "됐네", Toast.LENGTH_SHORT).show()
             }
 
             override fun onError(error: FacebookException?) {
-                Toast.makeText(activity.baseContext, "에러",Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity.baseContext, "에러", Toast.LENGTH_SHORT).show()
             }
 
             override fun onCancel() {
-                Toast.makeText(activity.baseContext, "취소",Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity.baseContext, "취소", Toast.LENGTH_SHORT).show()
             }
         })
+
+        LoginManager.getInstance().logInWithPublishPermissions(activity, listOf())
     }
 }
