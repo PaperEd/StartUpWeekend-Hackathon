@@ -15,7 +15,7 @@ class SendingParcelActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sending_parcel)
 
-        var startingPoint : String = "서울"
+        var startingPoint: String = "서울"
         var arrivalPoint = "서울"
         val dataBase = FirebaseFirestore.getInstance()
         val parcel = HashMap<String, Any>()
@@ -26,7 +26,7 @@ class SendingParcelActivity : AppCompatActivity() {
 
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 startingPoint = sending_spinner_start.getItemAtPosition(p2).toString()
-                Toast.makeText(baseContext,"${sending_spinner_start.getItemAtPosition(p2)}",Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "${sending_spinner_start.getItemAtPosition(p2)}", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -63,17 +63,19 @@ class SendingParcelActivity : AppCompatActivity() {
 
         })
         sending_button_nextStep.setOnClickListener {
-            parcel.put("starting_point",startingPoint)
-            parcel.put("arrival_point",arrivalPoint)
+            parcel.put("starting_point", startingPoint)
+            parcel.put("arrival_point", arrivalPoint)
             parcel.put("small_item_count", sending_text_small.text.toString())
             parcel.put("middle_item_count", sending_text_middle.text.toString())
             parcel.put("large_item_count", sending_text_large.text.toString())
-            parcel.put("item_weight",sending_text_kg.text.toString())
-
+            parcel.put("item_weight", sending_text_kg.text.toString())
+            parcel.put("arrival_detail_address", sending_editText_detailAdress.text.toString())
+            parcel.put("approval", false)
+            parcel.put("item_status", "not accepted")
             dataBase.collection("parcel")
                     .add(parcel)
                     .addOnSuccessListener {
-                        Toast.makeText(baseContext,"화물이 등록되었습니다!",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(baseContext, "화물이 등록되었습니다!", Toast.LENGTH_SHORT).show()
                     }
             startActivity(Intent(this, ShowPriceActivity::class.java))
             finish()
