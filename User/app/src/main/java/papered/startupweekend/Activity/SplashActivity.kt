@@ -15,7 +15,7 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+//        setContentView(R.layout.activity_splash)
         val dataBase = FirebaseFirestore.getInstance()
         val sp = getSharedPreferences("userKey", Activity.MODE_PRIVATE)
         val key: String? = sp.getString("key", "not_key")
