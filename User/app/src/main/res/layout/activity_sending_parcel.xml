@@ -6,26 +6,14 @@
     android:layout_height="match_parent"
     tools:context="papered.startupweekend.Activity.SendingParcelActivity">
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:progress="10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="출발 국가"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
+        android:text="REGISTER YOUR LUGGAGE"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/sending_spinner_start"
@@ -44,8 +32,8 @@
     <ImageView
         android:id="@+id/sending_image_middle"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_launcher_background"
+        android:layout_height="80dp"
+        android:src="@drawable/middle_carr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sending_image_large"
         app:layout_constraintHorizontal_bias="0.5"
@@ -53,13 +41,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sending_image_small"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.315" />
 
     <ImageView
         android:id="@+id/sending_image_large"
         android:layout_width="100dp"
         android:layout_height="0dp"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/large_carr"
         app:layout_constraintBottom_toBottomOf="@+id/sending_image_middle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -69,9 +57,9 @@
 
     <ImageView
         android:id="@+id/sending_image_small"
-        android:layout_width="100dp"
+        android:layout_width="50dp"
         android:layout_height="0dp"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/small_carr"
         app:layout_constraintBottom_toBottomOf="@+id/sending_image_middle"
         app:layout_constraintEnd_toStartOf="@+id/sending_image_middle"
         app:layout_constraintHorizontal_bias="0.5"
@@ -188,7 +176,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/sending_spinner_start" />
 
     <EditText
         android:id="@+id/sending_editText_detailAdress"
