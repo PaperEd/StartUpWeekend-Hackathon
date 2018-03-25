@@ -66,6 +66,7 @@ class SendingParcelActivity : AppCompatActivity() {
 
         })
         sending_button_nextStep.setOnClickListener {
+            var authId : String? = null
             parcel.put("starting_point", startingPoint)
             parcel.put("arrival_point", arrivalPoint)
             parcel.put("small_item_count", sending_text_small.text.toString())
@@ -79,9 +80,12 @@ class SendingParcelActivity : AppCompatActivity() {
             dataBase.collection("parcel")
                     .add(parcel)
                     .addOnSuccessListener {
+                        authId = it.id
                         Toast.makeText(baseContext, "화물이 등록되었습니다!", Toast.LENGTH_SHORT).show()
                     }
-            startActivity(Intent(this, ShowPriceActivity::class.java))
+            val intent = Intent(this,CameraActivity::class.java)
+            intent.putExtra("authId",authId)
+            startActivity(intent)
             finish()
         }
     }

@@ -28,6 +28,8 @@ class CameraActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
+        val intent = intent
+        intent.getStringExtra("authKey")
         val permissionListener: PermissionListener = object : PermissionListener {
             override fun onPermissionGranted() {
 
@@ -49,7 +51,9 @@ class CameraActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        resultImage.setImageURI(data?.data)
+        val extras = data?.extras
+
+        resultImage.setImageBitmap(extras!!.getParcelable("data"))
     }
 
 }
