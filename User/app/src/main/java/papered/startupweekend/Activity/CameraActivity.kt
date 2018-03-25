@@ -55,7 +55,9 @@ class CameraActivity : AppCompatActivity() {
                 .setPermissions(android.Manifest.permission.CAMERA, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 .check()
         camera_button_shot.setOnClickListener {
-            startActivityForResult(Intent(MediaStore.ACTION_IMAGE_CAPTURE), 1)
+            startActivity(Intent(this,FinishActivity::class.java))
+//            startActivityForResult(Intent(MediaStore.ACTION_IMAGE_CAPTURE), 1)
+            finish()
         }
     }
 
@@ -69,7 +71,7 @@ class CameraActivity : AppCompatActivity() {
         val bitmap = resultImage.drawingCache
 
         val baos = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos)
+        bitmap.compress(Bitmap.CompressFormat.JPEG,50,baos)
         val data = baos.toByteArray()
 
         val uploadTask = imageRef.putBytes(data)

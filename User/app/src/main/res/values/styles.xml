@@ -14,4 +14,13 @@
         <item name="android:windowBackground">@drawable/back_splash</item>
     </style>
 
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">#50e3c2</item>
+    </style>
+
+    <style name="editTextStyle" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:colorControlNormal">#50e3c2</item>
+        <item name="android:colorControlActivated">#50e3c2</item>
+    </style>
+
 </resources>

@@ -10,17 +10,24 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
         android:text="REGISTER YOUR LUGGAGE"
+        android:textColor="#262626"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/sending_spinner_start"
+        style="@style/mySpinnerItemStyle"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:entries="@array/country"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -31,8 +38,8 @@
 
     <ImageView
         android:id="@+id/sending_image_middle"
-        android:layout_width="100dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:src="@drawable/middle_carr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sending_image_large"
@@ -41,28 +48,32 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sending_image_small"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.315" />
+        app:layout_constraintVertical_bias="0.451" />
 
     <ImageView
         android:id="@+id/sending_image_large"
         android:layout_width="100dp"
-        android:layout_height="0dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="16dp"
         android:src="@drawable/large_carr"
         app:layout_constraintBottom_toBottomOf="@+id/sending_image_middle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sending_image_middle"
         app:layout_constraintTop_toTopOf="@+id/sending_image_middle"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.966" />
 
     <ImageView
         android:id="@+id/sending_image_small"
         android:layout_width="50dp"
         android:layout_height="0dp"
+        android:layout_marginStart="48dp"
         android:src="@drawable/small_carr"
         app:layout_constraintBottom_toBottomOf="@+id/sending_image_middle"
         app:layout_constraintEnd_toStartOf="@+id/sending_image_middle"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/sending_image_middle"
         app:layout_constraintVertical_bias="1.0" />
@@ -71,13 +82,11 @@
         android:id="@+id/sending_text_small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="0"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="@+id/sending_image_small"
-        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/sending_image_small"
         app:layout_constraintTop_toBottomOf="@+id/sending_image_small" />
 
@@ -89,7 +98,7 @@
         android:text="0"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="@+id/sending_image_middle"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="@+id/sending_image_middle"
@@ -105,7 +114,7 @@
         android:text="0"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="@+id/sending_image_large"
-        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/sending_image_large"
         app:layout_constraintTop_toBottomOf="@+id/sending_image_large" />
 
@@ -113,11 +122,11 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:text="중량"
-        android:textSize="30sp"
+        android:text="Select Your Luggages Weight"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/sending_seekBar_weight"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -125,10 +134,11 @@
     <SeekBar
         android:id="@+id/sending_seekBar_weight"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_height="10dp"
         android:max="20"
         android:progress="2"
+        android:progressDrawable="@drawable/custom_seekbar"
+        android:thumb="@drawable/custom_seekbar_thumb"
         app:layout_constraintBottom_toTopOf="@+id/sending_text_kg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -140,31 +150,19 @@
         android:id="@+id/sending_text_kg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="224dp"
+        android:layout_marginBottom="172dp"
         android:text="2KG"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/sending_seekBar_weight"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="@+id/sending_seekBar_weight" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:text="배송지"
-        android:textSize="30sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sending_text_kg" />
-
     <Spinner
         android:id="@+id/sending_spinner_arrival"
+        style="@style/mySpinnerItemStyle"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginEnd="16dp"
@@ -181,13 +179,14 @@
     <EditText
         android:id="@+id/sending_editText_detailAdress"
         android:layout_width="match_parent"
-        android:hint="상세주소"
-        android:inputType="text"
-        android:maxLines="1"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:hint="상세주소"
+        android:inputType="text"
+        android:maxLines="1"
+        style="@style/editTextStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -195,11 +194,17 @@
 
     <Button
         android:id="@+id/sending_button_nextStep"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="44dp"
         android:layout_marginEnd="16dp"
-        android:text="다음"
+        android:layout_marginStart="16dp"
+        android:textColor="#FFF"
+        android:background="@drawable/warning_background"
+        android:padding="20dp"
+        android:text="After this, You need to take your whole stuff in your luggage. you should spread all your stuff. Do not hide your sutuffs."
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>
