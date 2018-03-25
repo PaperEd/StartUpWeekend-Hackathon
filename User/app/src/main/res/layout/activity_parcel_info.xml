@@ -6,4 +6,101 @@
     android:layout_height="match_parent"
     tools:context="papered.startupweekend.Activity.ParcelInfoActivity">
 
+    <TextView
+        android:id="@+id/parcelInfo_text_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="출발지: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/parcelInfo_text_arrival"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="도착지: "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/parcelInfo_image_smallParcel"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="@+id/parcelInfo_image_middleParcel"
+        app:layout_constraintEnd_toStartOf="@+id/parcelInfo_image_middleParcel"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/parcelInfo_image_middleParcel" />
+
+    <ImageView
+        android:id="@+id/parcelInfo_image_middleParcel"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="135dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toStartOf="@+id/parcelInfo_image_largeParcel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/parcelInfo_image_smallParcel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/parcelInfo_image_largeParcel"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="@+id/parcelInfo_image_middleParcel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/parcelInfo_image_middleParcel"
+        app:layout_constraintTop_toTopOf="@+id/parcelInfo_image_middleParcel" />
+
+    <TextView
+        android:id="@+id/parceInfo_text_smallParcel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/parcelInfo_image_smallParcel"
+        app:layout_constraintStart_toStartOf="@+id/parcelInfo_image_smallParcel"
+        app:layout_constraintTop_toBottomOf="@+id/parcelInfo_image_smallParcel" />
+
+    <TextView
+        android:id="@+id/parceInfo_text_middleParcel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/parcelInfo_image_middleParcel"
+        app:layout_constraintStart_toStartOf="@+id/parcelInfo_image_middleParcel"
+        app:layout_constraintTop_toBottomOf="@+id/parcelInfo_image_middleParcel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/parceInfo_text_largeParcel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/parcelInfo_image_largeParcel"
+        app:layout_constraintStart_toStartOf="@+id/parcelInfo_image_largeParcel"
+        app:layout_constraintTop_toBottomOf="@+id/parcelInfo_image_largeParcel" />
+
+    <Button
+        android:id="@+id/parcelInfo_button_acceptTransport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="운송해줄게요"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>

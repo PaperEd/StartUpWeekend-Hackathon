@@ -2,6 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="papered.startupweekend">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.media.action.IMAGE_CAPTURE" />
+    <uses-permission android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -39,7 +50,8 @@
         <activity android:name=".Activity.WarningActivity" />
         <activity android:name=".Activity.ReceiveActivity" />
         <activity android:name=".Activity.ChooseParcelActivity" />
-        <activity android:name=".Activity.ParcelInfoActivity"></activity>
+        <activity android:name=".Activity.ParcelInfoActivity" />
+        <activity android:name=".Activity.CameraActivity"></activity>
     </application>
 
 </manifest>
